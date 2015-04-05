@@ -1,0 +1,52 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    height: 80%;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.green {
+    color: #008000;
+}
+
+.red {
+    color: #ff0000;
+}
+
+.build {
+    float: left;
+    margin: 10px;
+}
+
+.build span:hover {
+    cursor: pointer;
+    background-color: #dff0d8;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.project {
+    float: left;
+    margin: 20px;
+}
+
+.last-failed {
+    font-weight: bold;
+}

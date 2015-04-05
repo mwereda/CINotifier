@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Projects";
+}
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script type="text/javascript" src="~/signalr/hubs"></script>
+    <script src="~/Scripts/app/notifier.viewmodel.js"></script>
+    <script src="~/Scripts/app/notifier.js"></script>
+}
+
+<div class="container" data-bind="foreach: projects">
+    <div class="panel project" data-bind="css: {'panel-success': IsLastSuccess, 'panel-danger last-failed': !IsLastSuccess }">
+        <div class="panel-heading" data-bind="text: Project.Name"></div>
+        <div class="build" data-bind="foreach: Builds">
+            <span class="glyphicon" data-bind="css: {'glyphicon-ok green' : IsSuccess, 'glyphicon-remove red' : !IsSuccess }" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CINotifier/bin
+/CINotifier/obj/Debug
+/CINotifier.Logic/bin/Debug
+/CINotifier.Logic/obj/Debug
+*.user
+/CINotifier.Logic.Tests/bin/Debug
+/CINotifier.Logic.Tests/obj/Debug
+/packages
