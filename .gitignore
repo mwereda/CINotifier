@@ -10,3 +10,5 @@
 /CINotifier.Logic.Tests/bin/Debug
 /CINotifier.Logic.Tests/obj/Debug
 /packages
+*.suo
+CINotifier/projects.json

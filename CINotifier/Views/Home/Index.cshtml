@@ -12,6 +12,11 @@
 <div class="container" data-bind="foreach: projects">
     <div class="panel project" data-bind="css: {'panel-success': IsLastSuccess, 'panel-danger last-failed': !IsLastSuccess }">
         <div class="panel-heading" data-bind="text: Project.Name"></div>
+        <div class="failed-build" data-bind="visible: !$parent.isLastSuccess(Project.Name)">
+            <p data-bind="text: $parent.lastFailedDeveloper(Project.Name)"></p>
+            <p data-bind="text: $parent.lastFailedVersion(Project.Name)"></p>
+            <hr />
+        </div>
         <div class="build" data-bind="foreach: Builds">
             <span class="glyphicon" data-bind="css: {'glyphicon-ok green' : IsSuccess, 'glyphicon-remove red' : !IsSuccess }" aria-hidden="true"></span>
         </div>

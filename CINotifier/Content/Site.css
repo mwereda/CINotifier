@@ -50,3 +50,7 @@ textarea {
 .last-failed {
     font-weight: bold;
 }
+
+.failed-build p {
+    margin: 5px;
+}
