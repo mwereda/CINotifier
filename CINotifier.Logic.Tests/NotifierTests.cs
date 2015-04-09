@@ -76,7 +76,7 @@ namespace CINotifier.Logic.Tests
             var projects = notifier.GetProjects();
 
             Assert.NotNull(projects);
-            Assert.Empty(projects);
+            Assert.Equal(0, projects.Count);
         }
     }
 }
