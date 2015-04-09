@@ -58,7 +58,11 @@ namespace CINotifier.Controllers
             var projects = NotifierWrapper.Instance.GetProjects();
 
             var builds = new List<ProjectBuildsHistory>(projects.Count);
-            builds.AddRange(projects.Select(project => new ProjectBuildsHistory {Project = new Project(project.Name), Builds = project.ListBuilds()}));
+            builds.AddRange(
+                projects.Select(
+                    project =>
+                        new ProjectBuildsHistory {Project = new Project(project.Name), Builds = project.ListBuilds()})
+                    .OrderBy(x => x.Project.Name));
 
             return CreateResponse(HttpStatusCode.OK, builds);
         }
