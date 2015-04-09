@@ -2,7 +2,7 @@
     var self = this;
 
     function getProject(name) {
-        var projects = self.projects().filter(function (project) {
+        var projects = self.projects().filter(function(project) {
             return project.Project.Name === name;
         });
 
@@ -20,53 +20,34 @@
 
     self.projects = ko.observableArray([]);
 
-    self.isLastSuccess = ko.computed({
-        read: function () {
-            return true;
-        },
-        write: function (name) {
-            var project = getProject(name);
-            if (project) {
-                return project.IsLastSuccess;
+    self.isLastSuccess = function(name) {
+        var project = getProject(name);
+        if (project) {
+            return project.IsLastSuccess;
+        }
+
+        return true;
+    };
+
+    self.lastFailedDeveloper = function(name) {
+        if (!self.isLastSuccess(name)) {
+            var failedBuild = getLastFailedFromProject(name);
+            if (failedBuild) {
+                return failedBuild.Developer.Name;
             }
+        }
 
-            return true;
-        },
-        owner: this
-    });
+        return null;
+    };
 
-    self.lastFailedDeveloper = ko.computed(
-    {
-        read: function () {
-            return '';
-        },
-        write: function (name) {
-            if (!self.isLastSuccess()) {
-                var failedBuild = getLastFailedFromProject(name);
-                if (failedBuild) {
-                    return failedBuild.Developer.Name;
-                }
+    self.lastFailedVersion = function(name) {
+        if (!self.isLastSuccess(name)) {
+            var failedBuild = getLastFailedFromProject(name);
+            if (failedBuild) {
+                return 'Build: ' + failedBuild.Number;
             }
+        };
 
-            return null;
-        },
-        owner: this
-    });
-
-    self.lastFailedVersion = ko.computed({
-        read: function () {
-            return '';
-        },
-        write: function (name) {
-            if (!self.isLastSuccess()) {
-                var failedBuild = getLastFailedFromProject(name);
-                if (failedBuild) {
-                    return failedBuild.Number;
-                }
-            }
-
-            return null;
-        },
-        owner: this
-    });
+        return null;
+    }
 }
