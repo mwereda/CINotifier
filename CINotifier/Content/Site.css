@@ -54,3 +54,13 @@ textarea {
 .failed-build p {
     margin: 5px;
 }
+
+.navbar-style {
+  background-image: -webkit-linear-gradient(top, #e5e7ec 0%, #c5c2c2 100%);
+  background-image:      -o-linear-gradient(top, #e5e7ec 0%, #c5c2c2 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e7ec), to(#c5c2c2));
+  background-image:         linear-gradient(to bottom, #e5e7ec 0%, #c5c2c2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4fdfe5e7ec', endColorstr='#c5c2c2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+}
