@@ -153,6 +153,7 @@
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\app\notifier.knockout.bindings.js" />
     <Content Include="Scripts\app\notifier.viewmodel.js" />
     <Content Include="Scripts\app\notifier.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
