@@ -68,6 +68,29 @@ namespace CINotifier.Controllers
         }
 
         /// <summary>
+        /// Deletes information about whole project
+        /// </summary>
+        /// <param name="projectName">Project's name</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("api/builds")]
+        public Task<HttpResponseMessage> Delete(string projectName)
+        {
+            try
+            {
+                Ensure.That(projectName).IsNotNullOrEmpty();
+
+                NotifierWrapper.Instance.Delete(projectName);
+
+                return CreateResponse(HttpStatusCode.NotFound, projectName);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Returns last build history within given project.
         /// </summary>
         /// <param name="projectName">Project's name</param>

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CINotifier.Logic.Extenstions;
 using CINotifier.Logic.Projects;
 using EnsureThat;
@@ -64,6 +63,17 @@ namespace CINotifier.Logic
             Ensure.That(projectBags).IsNotNull();
 
             this.projects.AddRange(projectBags);
+        }
+
+        internal void Delete(string projectName)
+        {
+            Ensure.That(projectName).IsNotNullOrEmpty();
+
+            var projectBag = this.projects.FirstOrDefault(x => x.Name.Equals(projectName));
+            if (projectBag.IsNotNull())
+            {
+                this.projects.Remove(projectBag);
+            }
         }
 
         private ProjectBag GetProjectBag(Project project)

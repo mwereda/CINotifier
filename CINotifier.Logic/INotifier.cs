@@ -10,5 +10,6 @@ namespace CINotifier.Logic
         void ReportBuildToProject(Build build, Project project);
         IList<ProjectBag> GetProjects();
         IList<Build> GetBuildsForProject(Project project);
+        void Delete(string projectName);
     }
 }

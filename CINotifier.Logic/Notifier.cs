@@ -50,5 +50,12 @@ namespace CINotifier.Logic
 
             return ProjectManager.Instance.GetBuildsFromProject(project);
         }
+
+        public void Delete(string projectName)
+        {
+            Ensure.That(projectName).IsNotNullOrEmpty();
+
+            ProjectManager.Instance.Delete(projectName);
+        }
     }
 }
