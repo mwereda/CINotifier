@@ -153,6 +153,8 @@
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\app\admin.js" />
+    <Content Include="Scripts\app\admin.viewmodel.js" />
     <Content Include="Scripts\app\notifier.knockout.bindings.js" />
     <Content Include="Scripts\app\notifier.viewmodel.js" />
     <Content Include="Scripts\app\notifier.js" />
@@ -182,6 +184,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Admin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

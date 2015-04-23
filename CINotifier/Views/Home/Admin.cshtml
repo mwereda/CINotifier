@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Admin panel";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/app/admin.viewmodel.js"></script>
+    <script src="~/Scripts/app/admin.js"></script>
+}
+
+<div class="container" data-bind="foreach: projects">
+    <div class="panel project panel-info">
+        <div class="panel-heading" data-bind="text: Project.Name"></div>
+        <div>
+            <button data-bind="click: $parent.deleteProject(Project.Name)">Delete</button>
+        </div>
+    </div>
+</div>

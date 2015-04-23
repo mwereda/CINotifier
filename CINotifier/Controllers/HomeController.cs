@@ -8,5 +8,10 @@ namespace CINotifier.Controllers
         {
             return View();
         }
+
+        public ViewResult Admin()
+        {
+            return View();
+        }
     }
 }
