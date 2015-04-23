@@ -64,16 +64,3 @@ textarea {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
 }
-
-.admin-projects {
- 
-}
-
-.admin-projects p {
-    float: left;
-}
-
-.admin-projects button {
-    float: left;
-    margin-left: 20px;
-}
